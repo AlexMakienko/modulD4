@@ -1,0 +1,27 @@
+{% extends 'flatpages/default.html' %}
+
+{% load custom_filters %}
+
+{% block title %}
+Post
+{% endblock title %}
+
+{% block content %}
+    <h1>{{ post.title|censor }}</h1>
+    <hr>
+        <table>
+            <tr>
+                <td>Текст: {{ post.text|censor }}</td>
+            </tr>
+            <tr>
+                <td>Дата создания: {{ post.created }}</td>
+            </tr>
+            <tr>
+                <td>Автор: {{ post.author.user.username }}</td>
+            </tr>
+            <tr>
+                <td>Рейтинг: {{ post.rating }}</td></tr>
+            </tr>
+        </table>
+
+{% endblock content %}
